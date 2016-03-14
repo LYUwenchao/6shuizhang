@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>流水账</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize3.0.2.css">
+  <link href="fontawesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+  <script type="text/javascript" src="js/jquery-2.1.3.min.js" ></script>
+  <script type="text/javascript" src='js/jquery.cycle.plugin.js'></script>
+  <script type="text/javascript" src='js/jquery-ui.js'></script>
+  <script type="text/javascript" src='js/myjs.js'></script>
+  <script type="text/javascript" src='js/music.js'></script>
+</head>
+<body>
+  <div class='toolbar'>
+    <a href="javascript:;" class='toolbar-common  toolbar-feedback'></a>
+    <a href="javascript:;" class='toolbar-common toolbar-weixin'></a>
+    <a href="javascript:;" class='toolbar-common toolbar-weibo'></a>
+    <a href="javascript:;" id='backtop' class='toolbar-common toolbar-top'></a>
+  </div>
+  <div class='container'>
+    <header>
+      <div class='logo_box'>
+        <p>流水账</p>
+        <p>不加分析的叙述和记载</p>
+      </div>
+      <div class='nav_box'>
+        <ul>
+          <li>
+            <a href="#person" id='LSZperson'>·人物篇</a>
+          </li>
+          <li><a href="#story" id='LSZstory'>·故事篇</a></li>
+          <li><a href="#material" id='LSZmaterial'>·实物篇</a></li>
+        </ul>
+        <div class='login_box'>
+          <p><a href="login.html">注册</a></p>
+          <p><a href="login.html">登录</a></p>
+        </div>
+      </div>
+    </header>
+    <div class='search_box'>
+      <form>
+        <input type='text' id='search' name='search' placeholder='请输入搜索内容'>
+        <label for='search'><span><i class="fa  fa-search"></i></span></label>
+      </form>
+    </div>
+    <div class='introduction_box'>
+      <div class="introduction_box_pic">
+        <div class='pics'>
+          <img src="images/slide1.png" alt="" height="289" width="500">
+          <img src="images/slide3.png" alt="" height="289" width="500">
+          <img src="images/slide2.png" alt="" height="289" width="500">
+          <img src="images/slide4.png" alt="" height="289" width="500">
+          <img src="images/slide5.png" alt="" height="289" width="500">
+          <img src="images/slide6.png" alt="" height="289" width="500">         
+        </div>
+        <a href="javascript:;" id="prev"></a>
+        <a href="javascript:;" id="next"></a>
+      </div>
+      <div class="introduction_box_title">
+          <h2><span><i class="fa fa-paint-brush"></i></span>流水账·序</h2>
+          <div>
+            <p>满纸荒唐言，一把辛酸泪</p> 
+            <p>都云作者痴，谁解其中味</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——&nbsp;曹雪芹</p>          
+          </div>  
+      </div >
+      <div class='introduction_box_txt'>
+        <p>
+          <span>九百多年前，北宋的一位画家，用长卷形式，以北宋汴京的城市面貌和当时社会各阶层人民的生活状况为素材，绘制了一幅传世风俗画。在这幅五米多长的画卷里，绘了数量庞大的各色人物，牛、骡、驴等牲畜，车、轿、大小船只，房屋、桥梁、城楼也各有特色，体现了宋代建筑的特征，具有很高的历史价值和艺术价值。这幅画就是清明上河图，这位画家便是张择端。清明上河图几乎无人不知无人不晓，但是这位画家却显得有点“名不见经传”。关于张择端本人，史书上没有任何的史料记载，这不得不说是个遗憾。</span>
+          <a href="about.html" class="extra-button">了解更多</a>
+          <span>还是九百多年前，和此画几乎同时问世的还有一部书-东京梦华录。《东京梦华录》是宋代孟元老的笔记体散记文，创作于宋钦宗靖康二年（1127年），是一本追述北宋都城东京开封府城市风俗人情的著作。所记大多是宋徽宗崇宁到宣和（1102-1125）年间北宋都城东京开封的情况，描绘了这一历史时期居住在东京的上至王公贵族、下及庶民百姓的日常生活情景，是研究北宋都市社会生活、经济文化的一部极其重要的历史文献古籍。《东京梦华录》所记述的，从都城的范围到皇宫建筑，从官署的处所到城内的街坊，从饮食起居到岁时节令，从歌舞曲艺到婚丧习俗，几乎无所不包，不仅可以了解当时的民风时尚，同时也能感受到宋代发达的经济和繁荣的城市生活。</span>
+        </p>
+      </div> 
+      <div class='music_box'>
+        <audio id='music' loop='loop' autoplay='autoplay'>
+          <source src='mp3/bgm3.mp3'/>
+          <source src='mp3/bgm3.ogg'/>
+        </audio>
+        <button class='pausePlay' onclick="toggleSound()">
+          <span id="toggle" class='preserve3D'><i class="fa fa-music"></i></span>
+        </button>
+        <button onclick='changeVolP()'><span><i class="fa fa-plus-square"></i></span></button>
+        <button onclick='changeVolM()'><span><i class="fa fa-minus-square"></i></span></button>
+      </div>     
+    </div>
+    <div class='person_box' id='person'>
+      <div class='fixHeight'>
+        <div class='person_box_top'>
+          <!-- <a href="#"><img src="images/person.jpg"></a> -->
+          <h2>人物篇</h2>
+          <div class='person_box_top_animation'>
+            <img src="images/pic6.jpg">
+            <img src="images/pic1.png">
+            <img src="images/pic5.jpg">
+          </div>
+          <div class='box_top_animation-2'>
+            <img src="images/background1.jpg">
+          </div>       
+        </div>
+
+      </div>
+      <div class='person_article_box'>
+        <h3><span><i class="fa fa-book"></i><i class='fa fa-pencil'></i></span>&nbsp;记账本</h3>
+        <div class='article_tab'>
+          <div class='tab'>
+            <div class='column'>
+              <ul>
+                <li><a href="article.html">刷子李</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+              </ul>
+            </div>
+            <div class='column'>
+              <ul>
+                <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+              </ul>
+            </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第文章4标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第文章4标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一2篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第3一篇章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一4篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第3篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一3篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇3文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文3章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文3章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文4章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章5标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文55章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇5文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+        </div>
+        <ul class='subtab'>
+          <li class='select'><a href="javascript:;">&ensp;</a></li>
+          <li><a href="javascript:;">2</a></li>
+          <li><a href="javascript:;">3</a></li>
+          <li><a href="javascript:;">4</a></li>
+          <li><a href="javascript:;">5</a></li>
+          <li><a href="javascript:alert('暂无更多内容');">&raquo;</a></li>
+        </ul>
+      </div>
+      <div class='hot_article'>
+        <h3>账房先生推荐</h3>
+        <img src="images/13.jpg">
+        <ul>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>           
+        </ul>
+      </div>
+    </div>
+    <div class='story_box' id='story'>
+      <div class='fixHeight'>
+        <div class='story_box_top'>
+          <h2>故事篇</h2>
+          <div class='story_box_top_animation'>
+            <img src="images/pic-21.jpg">
+            <img src="images/butterfly-1.png">
+            <img src="images/butterfly-2.png">
+          </div>
+          <div class='box_top_animation-2'>
+            <img src="images/background2.jpg">
+          </div>       
+        </div>
+      </div>
+      <div class='story_article_box'>
+        <h3><span><i class="fa fa-book"></i><i class='fa fa-pencil'></i></span>&nbsp;记账本</h3>
+        <div class='article_tab'>
+          <div class='tab'>
+            <div class='column'>
+              <ul>
+                <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+              </ul>
+            </div>
+            <div class='column'>
+              <ul>
+                <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+              </ul>
+            </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第文章4标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第文章4标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一2篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第3一篇章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一4篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第3篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一3篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇3文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文3章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文3章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文4章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章5标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文55章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇5文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+        </div>
+        <ul class='subtab'>
+          <li class='select'><a href="javascript:;">&ensp;</a></li>
+          <li><a href="javascript:;">2</a></li>
+          <li><a href="javascript:;">3</a></li>
+          <li><a href="javascript:;">4</a></li>
+          <li><a href="javascript:;">5</a></li>
+          <li><a href="javascript:alert('暂无更多内容');">&raquo;</a></li>
+        </ul> 
+      </div>
+      <div class='hot_article'>
+        <h3>账房先生推荐</h3>
+        <img src="images/13.jpg">
+        <ul>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+        </ul>
+
+      </div>
+    </div>
+    <div class='material_box' id='material'>
+      <div class='fixHeight'>
+        <div class='material_box_top'>
+          <h2>实物篇</h2>
+          <div class='material_box_top_animation'>
+            <img src="images/30.jpg">
+            <img src="images/leaf.png">
+            <img src="images/dragonfly.png">
+          </div>
+          <div class='box_top_animation-2'>
+            <img src="images/background3.jpg">
+          </div>       
+        </div>
+      </div>
+      <div class='material_article_box'>
+        <h3><span><i class="fa fa-book"></i><i class='fa fa-pencil'></i></span>&nbsp;记账本</h3>
+        <div class='article_tab'>
+          <div class='tab'>
+            <div class='column'>
+              <ul>
+                <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+              </ul>
+            </div>
+            <div class='column'>
+              <ul>
+                <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+              </ul>
+            </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第文章4标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第文章4标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一2篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第3一篇章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一4篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第3篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一3篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇3文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文3章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文3章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文4章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇4文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+          <div class='tab'>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章5标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文55章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div>
+              <div class='column'>
+                <ul>
+                  <li><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文5章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇5文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                  <li><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+                </ul>
+              </div> 
+          </div>
+        </div>
+        <ul class='subtab'>
+          <li class='select'><a href="javascript:;">&ensp;</a></li>
+          <li><a href="javascript:;">2</a></li>
+          <li><a href="javascript:;">3</a></li>
+          <li><a href="javascript:;">4</a></li>
+          <li><a href="javascript:;">5</a></li>
+          <li><a href="javascript:alert('暂无更多内容');">&raquo;</a></li>
+        </ul>
+      </div>
+      <div class='hot_article'>
+        <h3>账房先生推荐</h3>
+        <img src="images/13.jpg">
+        <ul>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">苏七块</a><span><i class="fa  fa-user"></i>&nbsp;选自《俗世奇人》</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+            <li><span><i class='fa fa-caret-right'></i></span><a href="#">第一篇文章标题</a><span><i class="fa  fa-user"></i>&nbsp;文章作者</span></li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="grid">
+        <h2>版权申明</h2>
+        <h5>本网站仅用来学习交流，无其它商业应用。网站部分素材来源于网络，如不小心侵犯了您的权益，请及时联系我们,我们会进行妥善处理。</h5>
+        <h5><span><i class="fa fa-copyright"></i></span>&nbsp;流水账网 - 不加分析的叙述和记载</h5>
+      </div>  
+      <div class="grid">
+        <h2>联系我们</h2>
+        <h5>如果您对流水账网有任何感想或建议，或者想提供任何素材，欢迎您联系我们!&nbsp;<span><i class="fa fa-smile-o"></i></span></h5>
+        <p><span><i class="fa fa-qq"></i></span>&nbsp;11234565</p>
+        <p><span><i class="fa fa-envelope"></i></span>&nbsp;123455@126.com</p>
+      </div> 
+      <div id="datepicker"></div>
+    </footer>
+  </div>
+<script type="text/javascript">
+  $(function() {
+    $( "#datepicker" ).datepicker();
+    $('.pics').cycle({
+      fx: 'toss',
+      next:   '#next', 
+      prev:   '#prev' 
+    });
+  })
+</script>  
+</body>
+</html>

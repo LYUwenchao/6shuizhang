@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>欢迎登录流水账</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize3.0.2.css">
+  <link href="fontawesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <!--[if IE]>
+  <link href="fontawesome-4.2.0/css/font-awesome-ie7.min.css" rel="stylesheet" />
+  <![endif]-->
+<script type="text/javascript">
+function $(id){
+	return typeof id=="string"?document.getElementById(id):id
+}
+window.onload=function(){
+	var logRegTopDiv=$('log_regTop').getElementsByTagName('div');
+	var logContDiv=$('log_cont');
+	var regContDiv=$('reg_cont');
+	logRegTopDiv[0].onclick=function(){
+		logRegTopDiv[0].className='select';
+		logRegTopDiv[1].className='';
+		logContDiv.style.display='block';
+		regContDiv.style.display='none';
+	}
+	logRegTopDiv[1].onclick=function(){
+		logRegTopDiv[1].className='select';
+		logRegTopDiv[0].className='';
+		logContDiv.style.display='none';
+		regContDiv.style.display='block';
+	}
+}
+</script>
+</head>
+<body>
+	<div class='log_reg'>
+		<div id='log_regTop'>
+			<div class='select'><a href="javascript:;">登&nbsp&nbsp录</a></div>
+			<div><a href="javascript:;">注&nbsp&nbsp册</a></div>	
+		</div>
+		<div id='log_regCont'>
+			<div id='log_cont'><!-- 登录部分 -->
+				<form>
+					<div>
+						<span><i class="fa  fa-user"></i></span>
+						<input type='text' id='user_name' name='user_name' placeholder='请输入用户名或邮箱账号'><!-- 账号输入 -->
+					</div>
+					<div>
+						<span><i class="fa  fa-lock"></i></span>
+						<input type='password' id='password' name='password' minlength='6' maxlength='16' placeholder='输入密码'><!-- 密码输入 -->
+					</div>
+					<div>
+						<input type='checkbox' id='loginCheck' name='checkset' value='1' tabindex='4'>
+						<label for='loginCheck'> 下次自动登录</label>
+						<span><a href="#">忘记密码？</a></span>
+					</div>
+					<div>
+						<button type='submit'>登&nbsp&nbsp录</button>
+					</div>
+				</form>
+			</div>
+			<div id='reg_cont'>
+				<form>
+					<div>
+						<input type='text' id='user_email' name='user_email' placeholder='请输入邮箱账号'>
+					</div>
+					<div>
+						<input type='text' id='user_name' name='user_name' placeholder='请设置用户昵称'>
+					</div>
+					<div>
+						<input type='password' id='password' name='password' minlength='6' maxlength='16' placeholder='请设置密码'>
+					</div>
+					<div>
+						<input type='text' id='loginCheck' placeholder='输入验证码'>
+					</div>
+					<div>
+						<button type='submit'>注&nbsp&nbsp册</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

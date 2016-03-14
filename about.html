@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>流水账</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize3.0.2.css">
+  <link href="fontawesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/about.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+  <script type="text/javascript" src="js/jquery-2.1.3.min.js" ></script>
+  <script type="text/javascript" src='js/jquery-ui.js'></script>
+  <script type="text/javascript" src='js/music.js'></script>
+</head>
+<body>
+  <div class='toolbar'>
+    <a href="javascript:;" class='toolbar-common  toolbar-feedback'></a>
+    <a href="javascript:;" class='toolbar-common toolbar-weixin'></a>
+    <a href="javascript:;" class='toolbar-common toolbar-weibo'></a>
+    <a href="javascript:;" id='backtop' class='toolbar-common toolbar-top'></a>
+  </div>
+  <div class='container'>
+    <header>
+      <div class='logo_box'>
+        <p>流水账</p>
+        <p>不加分析的叙述和记载</p>
+      </div>
+      <div class='nav_box'>
+        <ul>
+          <li>
+            <a href="index.html">·人物篇</a>
+          </li>
+          <li><a href="index.html">·故事篇</a></li>
+          <li><a href="index.html">·实物篇</a></li>
+        </ul>
+        <div class='login_box'>
+          <p><a href="login.html">注册</a></p>
+          <p><a href="login.html">登录</a></p>
+        </div>
+      </div>
+    </header>
+    <div class='search_box'>
+      <form>
+        <input type='text' id='search' name='search' placeholder='请输入搜索内容'>
+        <label for='search'><span><i class="fa  fa-search"></i></span></label>
+      </form>
+    </div>
+    <div class='main_area'>
+      <div class="left_box">1</div>
+      <div class='main_box'>
+        <div class='music_box'>
+          <audio id='music' loop='loop' autoplay='autoplay'>
+            <source src='mp3/bgm3.mp3'/>
+            <source src='mp3/bgm3.ogg'/>
+          </audio>
+          <button class='pausePlay' onclick="toggleSound()">
+            <span id="toggle" class='preserve3D'><i class="fa fa-music"></i></span>
+          </button>
+          <button onclick='changeVolP()'><span><i class="fa fa-plus-square"></i></span></button>
+          <button onclick='changeVolM()'><span><i class="fa fa-minus-square"></i></span></button>
+        </div>
+        <h1>关于流水账网</h1>
+        <h4>满纸荒唐言，一把辛酸泪，都云作者痴，谁解其中味。</h4>
+        <h4>——《红楼梦》</h4>
+        <p>翻转历史年轮，回到九百多年前，北宋画家张择端，用长卷形式，以北宋汴京的城市面貌和当时社会各阶层人民的生活状况为素材，绘制了一幅传世风俗画——《清明上河图》。在这幅五米多长的画卷里，绘有数量庞大的各色人物，牛、骡、驴等牲畜，车、轿、大小船只、房屋、桥梁、城楼.....这幅画真实再现当时北宋都城的面貌，具有很高的历史价值和艺术价值。清明上河图几乎无人不知无人不晓，但是这位画家，史书上几乎没有任何的史料记载，这不得不说是个遗憾。</p>
+        <p>还是九百多年前，和此画几乎同时问世的还有一部书——《东京梦华录》。《东京梦华录》是宋代孟元老的笔记体散记文，创作于宋钦宗靖康二年（1127年），是一本追述北宋都城东京开封府城市风俗人情的著作。所记大多是宋徽宗崇宁到宣和（1102-1125）年间北宋都城东京开封的情况，描绘了这一历史时期居住在东京的上至王公贵族、下及庶民百姓的日常生活情景，是研究北宋都市社会生活、经济文化的一部极其重要的历史文献古籍。《东京梦华录》所记述的，从都城的范围到皇宫建筑，从官署的处所到城内的街坊，从饮食起居到岁时节令，从歌舞曲艺到婚丧习俗，几乎无所不包，不仅可以了解当时的民风时尚，同时也能感受到宋代发达的经济和繁荣的城市生活。</p>
+        <p>时间缓缓流淌，两百多年前，红楼诞生。据曹雪芹自述，他是依托自己早年在南京亲历的繁华旧梦写成了《红楼梦》。曹雪芹因流落北京西郊，碌碌无为，一事无成，猛然回忆起年少时家里的所有女孩儿，觉得她们的见识才气远远超过自己，不禁深自愧悔。祖上九死一生创下这家业，自己身在福中，却不务正业，不听从父母老师的管教，以致长大后一技无成，半生潦倒。曹雪芹将这段经历和悔悟写成小说，就是要告诉读者，虽然自己罪不可免，但那些女孩儿都是生活中实有其人，万不可为了掩盖自己的罪行而使她们的事迹湮灭无闻。曹雪芹自谦才疏学浅，用市井白话来写这部小说，意在为那些女孩儿立传，排遣自己的苦闷，兼以供读者把玩赏析。曹雪芹先生用毕生心血写下的荒唐言，却成就了中国古典小说最巅峰之作。</p>
+        <p>穿越回来，说说我吧。小时候，喜欢听老人们讲故事。爷爷那一辈，总是给我讲“水猴子”的故事，当时听着害怕且痴迷；他们还喜欢说各种俗语，现在想起这些俗语，觉得话糙但理不糙。爷爷那代人经历了很多：战火，流离，饥荒，改革开放，农业税减免，城镇化建设......他们那代人会的技能也很多，上山能抓兔，下水能捕鱼（到了我父亲这辈，会的就少了，再到我这一辈，几乎就不怎么会了）。这几年村里和爷爷岁数差不多的老人相继离去。再过几年，他们那一代人的经历就会被寥寥几笔写入历史，也可能只字不提。因为史书的篇幅是有限的，流传千古亦或遗臭万年，都会被写入历史，唯有平凡，平凡之人的悲欢离合似乎没人会在意，再者史书无论官修还是私修，其实都是被知识分子垄断的一家之言（即便像张择端、曹雪芹这样的大师，在史书上留下的也只有“生卒不详”四字，更别说普通人了）。爷爷那辈，识文断字者不多，自己没能力去记述，又入不了史学家的“法眼”，所以一生沉淀积累的乐观勤劳的性格，对平凡生活的感悟，代代相传的生活技能、经验、智慧、故事，最终不过化作一抔黄土。可惜可叹！</p>
+        <p>我上小学那会刚学写作文，为了凑齐篇幅字数，常常会写几点起床几点洗漱几点吃饭的琐事。结果老师一顿臭骂，说不要写这样的流水账作文，因为它像裹脚布一样又臭又长，要有自己的想法和观点。于是后来写作文，都陷入“文以载道”的模式——举大量的例子说明某个道理。再到后来，接触互联网，互联网兴起，意味着进入一个自媒体时代，每个人都可以表达出自己的观点。这是好事啊，但是渐渐地整个大环境似乎变得浮躁。泛滥的成功学、杜撰的心灵鸡汤、复制粘贴的网络段子、甚嚣尘上的炒作噱头开始充斥整个网络。“文以载道”，但“道”的比重越来越大，而文字最原始的功能却被忽视了——记录。</p> 
+        <p>记录有多重要呢？清明上河图，东京梦华录，红楼梦，这些都归功于记录；而平民百姓一生积累沉淀的宝贵财富葬于黄土，也是因为疏于记录。当我和伙伴们聊起这些时，便想着能不能做点什么呢？于是就创办了流水账网。</p>
+        <p>“流水账”一词，其中一条释义是不加分析的叙述和记载。不加分析强调流水账平台上的文字尽量不要有作者个人分析和主观引导，因为我们倾向于提供原始素材，“文以载道”转变为“文不载道”而让读者自行“悟道”，就像草在结它的种子，风在摇它的叶子，我们站着，不必说话，就十分美好；而叙述和记载强调客观性和真实性，我们不排斥文学创作，但在流水账这个平台，我们更希望把一些平凡的人、物、事记述下来，我们希望借助互联网众筹平台，依靠0、1二进制数，集思广益、管中窥豹，最大可能保存记述我们亲身经历过的历史，让历史由史学家编纂回归到芸芸众生的演绎，王谢庭前燕，说到底，还是寻常百姓家嘛。</p>
+        <p>不加分析的叙述和记载，这便是“流水账”创办的初衷。网站初期，我们把叙述和记载的素材局限于故事、人物、实物三个方面，以后有需要，再慢慢扩展。网站设计风格简约，以黄土颜色为主色调，图片文字偏于传统水墨画风格，网站设有背景乐播放，以营造更好氛围。我们希望流水账网能成为一个安静理性的平台，能够每天给大家提供半个多小时的休息放松时间，去阅读一些有意思的东西，这些有意思的东西既不是出自大师之手，也不是各个媒体的修饰编辑，而是普通大众的亲力亲为；能够让年轻点的朋友有机会去听听不同年龄各行各业的人在一起谈天说地；能够让年长点的朋友有机会去分享一些自己的所见所闻；能够让一些伴随着人的离开将永远消失的宝贵财富得以记录保留；能够让所有读者感受到记录和叙述的魅力和趣味、客观和真实也许比道理本身更重要。</p>
+        <p>原来，在这片土地上，生活着这样一群人，平平谈谈，普普通通，生生息息，世世代代......</p>
+        
+      </div>
+      <aside class='right_box'>3</aside>
+    </div>
+
+    <footer>
+      <div class="grid">
+        <h2>版权申明</h2>
+        <h5>本网站仅用来学习交流，无其它商业应用。网站部分素材来源于网络，如不小心侵犯了您的权益，请及时联系我们,我们会进行妥善处理。</h5>
+        <h5><span><i class="fa fa-copyright"></i></span>&nbsp;流水账网 - 不加分析的叙述和记载</h5>
+      </div>  
+      <div class="grid">
+        <h2>联系我们</h2>
+        <h5>如果您对流水账网有任何感想或建议，或者想提供任何素材，欢迎您联系我们!&nbsp;<span><i class="fa fa-smile-o"></i></span></h5>
+        <p><span><i class="fa fa-qq"></i></span>&nbsp;12324</p>
+        <p><span><i class="fa fa-envelope"></i></span>&nbsp;f123123@qq.com</p>
+      </div> 
+      <div id="datepicker"></div>
+    </footer>
+  </div>
+<script type="text/javascript">
+  $(function() {
+    $( "#datepicker" ).datepicker();
+
+    // 回到顶部
+    $("#backtop").click(function(){
+      $("html,body").animate(
+        {scrollTop:0},500);
+    });
+    $('#backtop').fadeOut(1);
+    $(window).scroll(function(){
+      var clientH=$(window).height();
+      var scrollTop=$(window).scrollTop();
+      if (scrollTop>clientH) {
+        $('#backtop').fadeIn();
+      }else{
+        $('#backtop').fadeOut();
+      };
+    })
+  })
+</script>
+  
+</body>
+</html>

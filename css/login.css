@@ -1,0 +1,75 @@
+@font-face{
+	font-family: "liushuizhang_font";
+	src:url(../font/font1.ttf);
+}
+
+.log_reg{
+	width:400px;
+	margin:0 auto;
+	height:auto;
+	border:1px solid #ccc;
+	font-family:Microsoft YaHei;
+	font-size:16px;		
+}
+#log_regTop{
+	height:50px;
+	font-family:liushuizhang_font;
+	font-size:30px;
+	background-color:rgba(200,185,164,1);
+}
+.log_reg a{
+	text-decoration:none;
+	color:#000;
+}
+#log_regTop div{
+	width:140px;
+	float:left;
+	padding:10px 30px;
+	line-height:30px;
+	text-align:center;
+}
+#log_regTop div.select{
+	background-color:#eee;
+}
+#log_regCont form div{
+	margin:20px;padding:5px;
+	border:1px solid #eee;
+}
+#log_cont form div:nth-child(3){
+	border:none;
+}
+#log_cont form div:nth-child(3) span{
+	padding-left:100px;
+}
+
+#log_cont div span:first-child,#log_cont div span:nth-child(2){
+	color:rgba(200,185,164,1);
+	padding:2px;
+	width:15px;
+	display:inline-block;
+}
+#log_regCont input{
+	border:none;
+	outline:none;
+	font-size:16px;
+	font-family:Microsoft YaHei;
+}
+#log_regCont form div button{
+	width:200px;
+	height:40px;
+	margin:0 auto;
+	outline:none;
+	display:block;
+	font-size:20px;
+	font-family:liushuizhang_font;
+	background-color:#eee;
+}
+#log_cont button{
+	background-color:rgba(200,185,164,1);
+}
+#log_regCont form div:last-child{
+	border:none;
+}
+#reg_cont{
+	display:none;
+}

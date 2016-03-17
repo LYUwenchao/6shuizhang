@@ -2710,9 +2710,10 @@
         }
     .introduction_box_title div{
         padding-left: 15px;
+        padding-right: 15px;
         color: #aaa;
         font-size: 12px;
-        text-align: left;
+        text-align: right;
         margin-bottom:30px;
     }
 
